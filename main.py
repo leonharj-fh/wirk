@@ -7,11 +7,6 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
 def plotQuestion(frageIndex: int, usecolumns: []) -> None:
 
     df = pd.read_csv("auswertung.csv", usecols=usecolumns, sep=";")
@@ -20,7 +15,7 @@ def plotQuestion(frageIndex: int, usecolumns: []) -> None:
     title = columnNames[0]
     # st.markdown("###### Frage {}: {}".format(frageIndex, columnNames[0]))
     st.markdown("###### Frage {}:".format(frageIndex))
-    df.rename(columns={columnNames[0]: "-", columnNames[1]: "IST", columnNames[2]: "Nach APP Intervention"}, inplace=True)
+    df.rename(columns={columnNames[0]: "-", columnNames[1]: "IST Erhebung", columnNames[2]: "Nach APP Intervention"}, inplace=True)
     #print(df.head())
 
     columnNames = df.columns.values
